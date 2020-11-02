@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Confirm Ad Delete</title>
+    <meta name="dj4e" content="b6cda17abb967ed28ec9610137aa45f7">
+</head>
+
+<body>
+    {% extends "base_menu.html" %}
+
+    {% block content %}
+        <h1>Delete Ad</h1>
+        <p>Are you sure you want to delete the ad: {{ ad }}?</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Yes, delete." class="btn btn-primary ">
+            <input type="submit" value="Cancel" class="btn btn-default" onclick="window.location.href='{% url 'ads:all' %}';return false;">
+        </form>
+    {% endblock %}
+</body>
+
+</html>

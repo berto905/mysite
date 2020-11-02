@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Breed Form</title>
+    <meta name="dj4e" content="806fec5af7f5b48b8a31a003e171f3fb">
+</head>
+
+<body>
+    {% extends "base_bootstrap.html" %}
+
+    {% block content %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+            <input type="submit" onclick="window.location='{% url 'cats:all' %}' ; return false;" value="Cancel">
+        </form>
+    {% endblock %}
+</body>
+
+</html>
